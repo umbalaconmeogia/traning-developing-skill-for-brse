@@ -24,15 +24,12 @@ We will create an *Equipment Management* system.
 
 [Project Plan](./ProjectPlan.md)
 
-## Development environment setup
+## [Development environment setup](./EnvironmentSetup.md)
 
 * Pure setup.
-* Apache
-  Easy to setup on Windows.
-* PHP, yii2 framework.
-  Easy to learn, the framework support fucntion we should reinforce.
-* Postgres
-  More general compare to MySQL.
+* [Install Postgres](./InstallPostgres.md). More general compare to MySQL.
+* [Install PHP](./InstallPhp.md), yii2 framework. Easy to learn, the framework support fucntion we should reinforce.
+* [Install Apache](./InstallApache.md). Easy to setup on Windows.
 
 ## Coding convention
 
@@ -49,13 +46,14 @@ We will create an *Equipment Management* system.
 * Gitlab
 * [Git](https://git-scm.com/), [TortoiseGit](https://tortoisegit.org/), [Sourcetree](https://www.sourcetreeapp.com/)
 * [draw.io](https://www.draw.io/) to draw UML (Use cases, Activity, Sequence diagram).
+* Composer [ComposerSetup](https://getcomposer.org/Composer-Setup.exe)
 
 ## Workflow
 
 * Requirement -> Design -> Coding -> Test -> Merge -> Release
 * Ticket work flow
 
-## Review
+## Homework
 
 1. Build your own development environtment.
 

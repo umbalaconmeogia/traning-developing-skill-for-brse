@@ -14,6 +14,7 @@ This is a course to improve developing skill for bridge system engineer, and exp
   * Coding skills.
     * Dependency injection.
     * I18n.
+		* Password encryption.
   * Testing.
   * Release.
   * Update and release.
@@ -38,6 +39,7 @@ This is a course to improve developing skill for bridge system engineer, and exp
 5. Searching and deleting
 6. Migrating and command line
 7. Configuration and environtment
+7. I18n
 8. Security
 9. Testing and release
 10. More effiction (vagrant, CI/CD).
