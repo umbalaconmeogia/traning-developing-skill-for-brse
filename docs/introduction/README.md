@@ -22,6 +22,8 @@ It has some issues:
 
 We will create an *Equipment Management* system.
 
+[Project Plan](./ProjectPlan.md)
+
 ## Development environment setup
 
 * Pure setup.
@@ -34,7 +36,8 @@ We will create an *Equipment Management* system.
 
 ## Coding convention
 
-Refer to [PSR-2](https://www.php-fig.org/psr/psr-2/) or [Yii2 core framework code style](https://github.com/yiisoft/yii2/blob/master/docs/internals/core-code-style.md)
+* Refer to [PSR-2](https://www.php-fig.org/psr/psr-2/) or [Yii2 core framework code style](https://github.com/yiisoft/yii2/blob/master/docs/internals/core-code-style.md)
+* You must follow the coding convention STRICTLY.
 
 ## Tools
 
@@ -63,3 +66,7 @@ Refer to [PSR-2](https://www.php-fig.org/psr/psr-2/) or [Yii2 core framework cod
   * Website https://www.yiiframework.com/
   * Quick tutorial https://www.yiiframework.com/doc/guide/2.0/en/start-workflow
   * Tutorial https://www.yiiframework.com/doc/guide/2.0/en
+
+## References
+
+* [Lesson format](./LessonFormat.md)
