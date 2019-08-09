@@ -5,3 +5,5 @@
 3. Setup httpd.conf
 4. Create php.conf
 5. Create vhost.conf
+6. Test
+7. Install service

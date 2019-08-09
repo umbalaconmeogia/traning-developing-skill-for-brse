@@ -22,7 +22,9 @@ It has some issues:
 
 We will create an *Equipment Management* system.
 
-[Project Plan](./ProjectPlan.md)
+### [Project Plan](./ProjectPlan.md)
+
+Project plan is what the team commit to do, and how to do them.
 
 ## [Development environment setup](./EnvironmentSetup.md)
 
@@ -44,7 +46,7 @@ We will create an *Equipment Management* system.
 * IDE (VS Code or Eclipse PDT?)
 * Ticket management: Redmine
 * Gitlab
-* [Git](https://git-scm.com/), [TortoiseGit](https://tortoisegit.org/), [Sourcetree](https://www.sourcetreeapp.com/)
+* [Git](https://git-scm.com/), [TortoiseGit](https://tortoisegit.org/) or [Sourcetree](https://www.sourcetreeapp.com/)
 * [draw.io](https://www.draw.io/) to draw UML (Use cases, Activity, Sequence diagram).
 * Composer [ComposerSetup](https://getcomposer.org/Composer-Setup.exe)
 
