@@ -22,16 +22,16 @@ It has some issues:
 
 We will create an *Equipment Management* system.
 
-### [Project Plan](./ProjectPlan.md)
+### [Project Plan](./files/ProjectPlan.md)
 
 Project plan is what the team commit to do, and how to do them.
 
-## [Development environment setup](./EnvironmentSetup.md)
+## [Development environment setup](./files/EnvironmentSetup.md)
 
 * Pure setup.
-* [Install Postgres](./InstallPostgres.md). More general compare to MySQL.
-* [Install PHP](./InstallPhp.md), yii2 framework. Easy to learn, the framework support fucntion we should reinforce.
-* [Install Apache](./InstallApache.md). Easy to setup on Windows.
+* [Install Postgres](./files/InstallPostgres.md). More general compare to MySQL.
+* [Install PHP](./files/InstallPhp.md), yii2 framework. Easy to learn, the framework support fucntion we should reinforce.
+* [Install Apache](./files/InstallApache.md). Easy to setup on Windows.
 
 ## Coding convention
 
@@ -69,4 +69,4 @@ Project plan is what the team commit to do, and how to do them.
 
 ## References
 
-* [Lesson format](./LessonFormat.md)
+* [Lesson format](./files/LessonFormat.md)
