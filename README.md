@@ -43,3 +43,6 @@ This is a course to improve developing skill for bridge system engineer, and exp
 8. Security
 9. Testing and release
 10. More effiction (vagrant, CI/CD).
+
+Note
+Dont release on Friday
