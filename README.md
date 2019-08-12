@@ -32,7 +32,7 @@ This is a course to improve developing skill for bridge system engineer, and exp
 ## Lessons
 
 1. [Introduction](./docs/introduction/README.md)
-2. Requirement definition
+2. [Requirement definition](./docs/requirement/README.md)
 2. Basic design
 3. Create database/Model/CRUD
 4. ActiveRecord, Performance
