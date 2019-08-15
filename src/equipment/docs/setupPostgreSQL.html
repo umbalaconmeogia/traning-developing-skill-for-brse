@@ -1,0 +1,87 @@
+<html>
+<head>
+  <title>Setup</title>
+  <style type="text/css">
+  <style type="text/css">
+    .code {
+      background-color: silver;
+    }
+  </style>
+</head>
+<body>
+<h1>Setup</h1>
+
+<ul>
+  <li><a href="#dev_env">Development environment setup</a><br/>
+    <ul>
+      <li><a href="#setup_postgres">Setup PostgreSQL</a></li>
+    </ul>
+  </li>
+  <li><a href="#others">Others</a><br/>
+    <ul>
+      <li><a href="#latex">gii</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2><a name="dev_env">Development environment setup</a></h2>
+
+<h3><a name="setup_postgres">Setup PostgreSQL</a></h3>
+
+<ol>
+  <li>Install Postgre SQL<br/>
+    You can download and install the latest version of Postgres SQL from <a href="http://www.enterprisedb.com/products/pgdownload.do#windows">http://www.enterprisedb.com/products/pgdownload.do#windows</a>.<br/>
+    To run the below command at command prompt, you should set the path of PostgreSQL\bin to the PATH environment variable of the Windows.<br/>
+    You need php-pdo-pgsql to be installed into PHP, too.<br/>
+  </li>
+  <li>Create the database <em>simple_equipment_management</em> for the current system by running the following command at the command prompt.<br/>
+    <pre class="code">
+createdb -U postgres -E UTF8 simple_equipment_management
+    </pre>
+    On linux, you need run the command as user <em>postgres</em>
+    <span class="code">
+sudo -u postgres createdb -U postgres -E UTF8 simple_equipment_management
+    </span>
+
+    <p /><p />
+
+    To delete the database<br/>
+    <pre class="code">
+dropdb -U postgres simple_equipment_management
+    </pre>
+    On linux, you need run the command as user <em>postgres</em>
+    <span class="code">
+sudo -u postgres dropdb -U postgres simple_equipment_management
+    </span>
+
+  </li>
+  <li>Create the user <em>simple_equipment_management</em><br/>
+    <ol>
+      <li>Run PostgreSQL client at the command prompt<br/>
+        <pre class="code">
+psql -U postgres
+  </pre>
+      </li>
+      <li>Run the following PostgreSQL commands to create the user and grant privileges<br/>
+        <pre class="code">
+create user simple_equipment_management with password 'simple_equipment_management';
+GRANT ALL PRIVILEGES ON DATABASE simple_equipment_management TO simple_equipment_management;
+  </pre>
+      </li>
+    </ol>
+  </li>
+  <li>To import the data schema (don't do this. Use migration instead)<br/>
+    <pre class="code"><strike>
+psql -U simple_equipment_management -d simple_equipment_management -f schema.pgsql.sql</strike>
+    </pre>
+  </li>
+</ol>
+
+<h3><a name="others">Others</a></h3>
+
+<ol>
+  <li><a href="http://projects.local/20160721.simple_equipment_management/trunk/05_Development/simple_equipment_management/web/?r=gii">Gii</a></li>
+</ol>
+
+</body>
+</html>

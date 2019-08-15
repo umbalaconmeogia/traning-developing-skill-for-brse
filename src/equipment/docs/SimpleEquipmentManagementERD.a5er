@@ -1,0 +1,148 @@
+﻿# A5:ER FORMAT:13
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright (C)2007 m.matsubara
+# A5:SQL Mk-2 Copyright (C)1997 m.matsubara
+#  http://www.wind.sannet.ne.jp/m_matsu/developer/a5m2/
+
+[Manager]
+ProjectName=SimpleEquipmentManagement
+Author=ThanhTT
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",7,"A3Landscape",$FFFFFF
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=7
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=Tahoma
+FontSize=6
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+RDBMSType=6
+RDBMSTypeName=PostgreSQL
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+ShowTag=1
+ShowCommonAttributes=0
+
+[Entity]
+PName=employee
+LName=Employee
+Comment=
+TableOption=
+Page=Main
+Left=100
+Top=200
+Field="ID","id","integer","NOT NULL",0,"","",$FFFFFFFF,""
+Field="氏名","name","varchar(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="データステータス","data_status","integer","NOT NULL",,"1","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190815231207
+Position="Main",100,200
+ZOrder=0
+
+[Entity]
+PName=equipment
+LName=Equipment
+Comment=
+TableOption=
+Page=Main
+Left=1300
+Top=200
+Field="ID","id","integer","NOT NULL",0,"","",$FFFFFFFF,""
+Field="コード","code","varchar(255)",,,"","",$FFFFFFFF,""
+Field="設備カテゴリ","type","integer","NOT NULL",,"","",$FFFFFFFF,""
+Field="製品名","name","varchar(255)",,,"","",$FFFFFFFF,""
+Field="型番","model_number","varchar(255)",,,"","",$FFFFFFFF,""
+Field="S/N","serial_number","varchar(255)",,,"","",$FFFFFFFF,""
+Field="スペック","specification","varchar(255)",,,"","",$FFFFFFFF,""
+Field="付属品","accessory","text",,,"","",$FFFFFFFF,""
+Field="備考","remarks","text",,,"","",$FFFFFFFF,""
+Field="購入日","buy_date","date",,,"","",$FFFFFFFF,""
+Field="金額","payment_amount","integer",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190816001412
+Position="Main",1300,200
+ZOrder=1
+
+[Entity]
+PName=lending_history
+LName=Lending history
+Comment=
+TableOption=
+Page=Main
+Left=700
+Top=200
+Field="ID","id","integer","NOT NULL",0,"","",$FFFFFFFF,""
+Field="社員","employee_id","integer","NOT NULL",,"","",$FFFFFFFF,""
+Field="設備","equipment_id","integer","NOT NULL",,"1","",$FFFFFFFF,""
+Field="貸出日","lending_date","date","NOT NULL",,"","",$FFFFFFFF,""
+Field="返却日","return_date","date",,,"","",$FFFFFFFF,""
+Field="備考","remarks","text",,,"","",$FFFFFFFF,""
+Field="貸出状態","lending_status","integer","NOT NULL",,"1","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190815232718
+Position="Main",700,200
+ZOrder=2
+
+[Relation]
+Entity1=employee
+Entity2=lending_history
+RelationType1=2
+RelationType2=3
+Fields1=id
+Fields2=employee_id
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,3130,6870,3029,R,R
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20190815232745
+LineMode=0
+Bar1=313
+Bar2=687
+Bar3=303
+TermPos1=R
+TermPos2=R
+ZOrder=3
+
+[Relation]
+Entity1=equipment
+Entity2=lending_history
+RelationType1=2
+RelationType2=3
+Fields1=id
+Fields2=equipment_id
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,3161,6839,3953,R,R
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20190815232817
+LineMode=0
+Bar1=316
+Bar2=684
+Bar3=395
+TermPos1=R
+TermPos2=R
+ZOrder=4

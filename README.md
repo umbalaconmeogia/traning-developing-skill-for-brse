@@ -47,16 +47,18 @@ This course is deviced in two parts, which are running paralelly: Software devel
 
 ### Coding skill
 
-1. Preparation (framework, DB design)
-1. Create DB schema, model, CRUD
+1. [Preparation](./docs/preparation/README.md)
+1. [Create DB schema, model, CRUD](./docs/crud/README.md)
 1. ActiveRecord, Performance
 1. Migrating and command line
 1. I18n
 1. Validation
 1. DRY
+1. Flag (bitwise)
 1. Put Business logic in Model
 1. Searching and deleting
 1. Bootstrap
+1. Logging
 1. RBAC
 1. Security
 1. Testing
