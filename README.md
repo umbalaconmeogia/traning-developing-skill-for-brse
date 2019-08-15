@@ -35,8 +35,8 @@ This course is deviced in two parts, which are running paralelly: Software devel
 
 ### Software development
 
-1. [Introduction](./docs/introduction/README.md)
-2. [Requirement definition](./docs/requirement/README.md)
+1. [Introduction](./docs/softdev/introduction/README.md)
+2. [Requirement definition](./docs/softdev/requirement/README.md)
 2. Basic design
 3. Detail design
 4. Development
@@ -47,8 +47,8 @@ This course is deviced in two parts, which are running paralelly: Software devel
 
 ### Coding skill
 
-1. [Preparation](./docs/preparation/README.md)
-1. [Create DB schema, model, CRUD](./docs/crud/README.md)
+1. [Preparation](./docs/codingskill/preparation/README.md)
+1. [Create DB schema, model, CRUD](./docs/codingskill/crud/README.md)
 1. ActiveRecord, Performance
 1. Migrating and command line
 1. I18n
