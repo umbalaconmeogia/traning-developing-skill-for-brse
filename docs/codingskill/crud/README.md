@@ -136,7 +136,7 @@ class m190815_150253_create_lending_history_table extends Migration
 * For flag field, use *integer* or *tinyint*?
 * *id* field and foreign key field.
 * Data type *string* or *text*
-* varchar(32) or varchar(255)
+* varchar(32) or varchar(255). Make life simpler. DB data type may larger than system requirement.
 
 ### Run migration files
 
@@ -191,6 +191,10 @@ class m190815_150253_create_lending_history_table extends Migration
 ![Menu items](./images/menuItems.png)
 
 * Explain about path (see redirect() in index, create, update).
+```php
+  ['view', 'id' => 1]
+  ['/employee/view', 'id' => 1]
+```
 
 ## References
 
