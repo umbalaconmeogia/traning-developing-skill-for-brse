@@ -31,18 +31,37 @@ This is a course to improve developing skill for bridge system engineer, and exp
 
 ## Lessons
 
+This course is deviced in two parts, which are running paralelly: Software development and coding skill.
+
+### Software development
+
 1. [Introduction](./docs/introduction/README.md)
 2. [Requirement definition](./docs/requirement/README.md)
 2. Basic design
-3. Create database/Model/CRUD
-4. ActiveRecord, Performance
-5. Searching and deleting
-6. Migrating and command line
-7. Configuration and environtment
-7. I18n
-8. Security
-9. Testing and release
-10. More effiction (vagrant, CI/CD).
+3. Detail design
+4. Development
+5. Testing
+6. Release
+7. Security
+8. More effiction (vagrant, CI/CD).
+
+### Coding skill
+
+1. Preparation (framework, DB design)
+1. Create DB schema, model, CRUD
+1. ActiveRecord, Performance
+1. Migrating and command line
+1. I18n
+1. Validation
+1. DRY
+1. Put Business logic in Model
+1. Searching and deleting
+1. Bootstrap
+1. RBAC
+1. Security
+1. Testing
+1. Configuration and environtment (advanced template)
+1. .gitignore
 
 Note
 Dont release on Friday
