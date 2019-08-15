@@ -11,7 +11,7 @@
 
 ## Design DB
 
-  ![ERD](./images/equipERD.png)
+  ![ERD](./images/ERD.png)
 
 ### Practice
 
@@ -182,6 +182,15 @@ class m190815_150253_create_lending_history_table extends Migration
   * Date selection
 
 ## Add items to the menu
+
+* Add following items into *src\equipment\views\layouts\main.php*
+```php
+            ['label' => 'Employee', 'url' => ['/employee/index']],
+            ['label' => 'Equipment', 'url' => ['/equipment/index']],
+```
+![Menu items](./images/menuItems.png)
+
+* Explain about path (see redirect() in index, create, update).
 
 ## References
 
