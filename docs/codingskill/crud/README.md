@@ -198,6 +198,10 @@ class m190815_150253_create_lending_history_table extends Migration
 
 ## References
 
+### Source code
+
+[lesson_crud](https://github.com/umbalaconmeogia/traning-developing-skill-for-brse/tree/lesson_crud/src/equipment)
+
 ### Another Postgres DB command.
 
 2. Drop database
