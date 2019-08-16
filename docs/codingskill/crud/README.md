@@ -175,7 +175,7 @@ class m190815_150253_create_lending_history_table extends Migration
   Input table name, model class name, then click "Generate"
   ![create CRUD Employee](./images/giiCrud.png)
 
-* Don't create CRUD for *LendingHistory* model.
+* Don't create CRUD for *LendingHistory* model because it is unecessary.
 
 * Update index screen
   ![Employee index](./images/indexScreen.png)
@@ -183,13 +183,58 @@ class m190815_150253_create_lending_history_table extends Migration
   * Add filter by dropdown for data_status.
 
 * Update view
-  * Str property
+  * xxxStr property
   * OptionArr
+  * Example
+    *models\Employee.php*
+    ```php
+    <?php
+    /**
+     * 省略
+     * @property string $dataStatusStr
+     */
+    class Employee extends \yii\db\ActiveRecord
+    {
+        const DATA_STATUS_NORMAL = 1;
+        const DATA_STATUS_DELETED = 9;    
+        
+        // 省略
+        
+        public static function dataStatusOptionArr()
+        {
+          return [
+            self::DATA_STATUS_NORMAL => '通常',
+            self::DATA_STATUS_DELETED => '削除',
+          ];
+        }
+        
+        public function getDataStatusStr()
+        {
+          return ArrayHelper::getValue(self::dataStatusOptionArr(), $this->data_status);
+        }
+    }
+    ```
+    *src\equipment\views\employee\view.php*
+    ```php
+    <?= DetailView::widget([
+        'model' => $model,
+        'attributes' => [
+            'name',
+            'dataStatusStr', // changed from 'data_status' to 'dataStatusStr'
+        ],
+    ]) ?>
+    ```
 
 * Form
   * Select by dropdown or radio list?
   * Input or textarea
   * Date selection
+  * Example
+    ```php
+    <?= $form->field($model, 'type')->radioList(Equipment::typeOptionArr()) ?>
+
+    <?= $form->field($model, 'buy_date')->textInput(['type' => 'date']) ?>
+    ```
 
 ## Add items to the menu
 
