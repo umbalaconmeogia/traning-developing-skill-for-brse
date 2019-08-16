@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use app\models\Employee;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\EmployeeSearch */
@@ -26,9 +27,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'name',
-            'data_status',
+            [
+              'attribute' => 'data_status',
+              'filter' => Employee::dataStatusOptionArr(),
+              'value' => 'dataStatusStr',
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
