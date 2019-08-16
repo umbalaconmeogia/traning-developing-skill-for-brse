@@ -34,6 +34,8 @@
     
     \q
     ```
+  ![create database](./images/createDb.png)
+
 ## Setup the database info in application config
 
 Open *src\equipment\config\db.php* and set the database information.
@@ -58,12 +60,44 @@ Screen shot of `./yii migrate/create create_employee_table`
 ![create_employee_table](./images/createEmployeeTable.png)
 
 Three migration files are created in *src\equipment\migrations*
-* m190815_145700_create_employee_table.php
+* <details><summary>m190815_145700_create_employee_table.php</summary>
+  ```php
+  <?php
+
+  use yii\db\Migration;
+
+  /**
+   * Handles the creation of table `{{%employee}}`.
+   */
+  class m190815_145700_create_employee_table extends Migration
+  {
+      /**
+       * {@inheritdoc}
+       */
+      public function safeUp()
+      {
+          $this->createTable('{{%employee}}', [
+              'id' => $this->primaryKey(),
+          ]);
+      }
+
+      /**
+       * {@inheritdoc}
+       */
+      public function safeDown()
+      {
+          $this->dropTable('{{%employee}}');
+      }
+  }
+  ```
+  <details>
 * m190815_150237_create_equipment_table.php
 * m190815_150253_create_lending_history_table.php
 
 ### Edit migration files to add columns
 
+<details>
+<summary>m190815_145700_create_employee_table.php</summary>
 ```php
 class m190815_145700_create_employee_table extends Migration
 {
@@ -78,8 +112,17 @@ class m190815_145700_create_employee_table extends Migration
             'data_status' => $this->integer(),
         ]);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function safeDown()
+    {
+        $this->dropTable('{{%employee}}');
+    }
 }
 ```
+</details>
 
 ```php
 class m190815_150237_create_equipment_table extends Migration
@@ -133,8 +176,8 @@ class m190815_150253_create_lending_history_table extends Migration
 
 ### Practice
 
-* For flag field, use *integer* or *tinyint*?
-* *id* field and foreign key field.
+* For flag field, use *integer* or *tinyint*? (bitwise, conbine searching)
+* *id* field and foreign key field (equipment_id for example).
 * Data type *string* or *text*
 * varchar(32) or varchar(255). Make life simpler. DB data type may larger than system requirement.
 
