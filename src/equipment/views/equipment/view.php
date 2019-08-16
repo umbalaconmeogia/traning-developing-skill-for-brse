@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'code',
-            'type',
+            'typeStr',
             'name',
             'model_number',
             'serial_number',
@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'accessory:ntext',
             'remarks:ntext',
             'buy_date',
-            'payment_amount',
+            'payment_amount:currency',
         ],
     ]) ?>
 

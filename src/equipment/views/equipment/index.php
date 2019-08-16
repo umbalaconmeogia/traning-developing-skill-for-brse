@@ -1,5 +1,6 @@
 <?php
 
+use app\models\Equipment;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
@@ -26,17 +27,20 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'code',
-            'type',
+            [
+                'attribute' => 'type',
+                'filter' => Equipment::typeOptionArr(),
+                'value' => 'typeStr',
+            ],
             'name',
             'model_number',
-            //'serial_number',
-            //'specification',
-            //'accessory:ntext',
-            //'remarks:ntext',
-            //'buy_date',
-            //'payment_amount',
+            'serial_number',
+            'specification',
+            'accessory:ntext',
+            'remarks:ntext',
+            'buy_date',
+            'payment_amount:currency',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

@@ -58,12 +58,15 @@ This course is deviced in two parts, which are running paralelly: Software devel
 1. Put Business logic in Model
 1. Searching and deleting
 1. Bootstrap
+1. Constant
 1. Logging
 1. RBAC
 1. Security
+  Login attemps
 1. Testing
 1. Configuration and environtment (advanced template)
 1. .gitignore
+1. Package management
 
 Note
 Dont release on Friday

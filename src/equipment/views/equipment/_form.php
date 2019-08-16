@@ -1,5 +1,6 @@
 <?php
 
+use app\models\Equipment;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -14,7 +15,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'code')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'type')->textInput() ?>
+    <?= $form->field($model, 'type')->radioList(Equipment::typeOptionArr()) ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
@@ -28,7 +29,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'remarks')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'buy_date')->textInput() ?>
+    <?= $form->field($model, 'buy_date')->textInput(['type' => 'date']) ?>
 
     <?= $form->field($model, 'payment_amount')->textInput() ?>
 
