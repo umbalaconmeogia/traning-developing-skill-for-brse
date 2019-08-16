@@ -60,44 +60,12 @@ Screen shot of `./yii migrate/create create_employee_table`
 ![create_employee_table](./images/createEmployeeTable.png)
 
 Three migration files are created in *src\equipment\migrations*
-* <details><summary>m190815_145700_create_employee_table.php</summary>
-  ```php
-  <?php
-
-  use yii\db\Migration;
-
-  /**
-   * Handles the creation of table `{{%employee}}`.
-   */
-  class m190815_145700_create_employee_table extends Migration
-  {
-      /**
-       * {@inheritdoc}
-       */
-      public function safeUp()
-      {
-          $this->createTable('{{%employee}}', [
-              'id' => $this->primaryKey(),
-          ]);
-      }
-
-      /**
-       * {@inheritdoc}
-       */
-      public function safeDown()
-      {
-          $this->dropTable('{{%employee}}');
-      }
-  }
-  ```
-  <details>
+* m190815_145700_create_employee_table.php
 * m190815_150237_create_equipment_table.php
 * m190815_150253_create_lending_history_table.php
 
 ### Edit migration files to add columns
 
-<details>
-<summary>m190815_145700_create_employee_table.php</summary>
 ```php
 class m190815_145700_create_employee_table extends Migration
 {
@@ -122,7 +90,6 @@ class m190815_145700_create_employee_table extends Migration
     }
 }
 ```
-</details>
 
 ```php
 class m190815_150237_create_equipment_table extends Migration
