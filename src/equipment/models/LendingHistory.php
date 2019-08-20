@@ -13,7 +13,7 @@ use Yii;
  * @property string $lending_date
  * @property string $return_date
  * @property string $remarks
- * @property int $lending_status
+ * @property string $borrower_name
  *
  * @property Employee $employee
  * @property Equipment $equipment
@@ -34,10 +34,12 @@ class LendingHistory extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['employee_id', 'equipment_id', 'lending_status'], 'default', 'value' => null],
-            [['employee_id', 'equipment_id', 'lending_status'], 'integer'],
+            [['employee_id', 'equipment_id'], 'default', 'value' => null],
+            [['employee_id', 'equipment_id'], 'integer'],
+            [['equipment_id'], 'required'],
             [['lending_date', 'return_date'], 'safe'],
             [['remarks'], 'string'],
+            [['borrower_name'], 'string', 'max' => 255],
             [['employee_id'], 'exist', 'skipOnError' => true, 'targetClass' => Employee::className(), 'targetAttribute' => ['employee_id' => 'id']],
             [['equipment_id'], 'exist', 'skipOnError' => true, 'targetClass' => Equipment::className(), 'targetAttribute' => ['equipment_id' => 'id']],
         ];
@@ -55,7 +57,7 @@ class LendingHistory extends \yii\db\ActiveRecord
             'lending_date' => Yii::t('app', 'Lending Date'),
             'return_date' => Yii::t('app', 'Return Date'),
             'remarks' => Yii::t('app', 'Remarks'),
-            'lending_status' => Yii::t('app', 'Lending Status'),
+            'borrower_name' => Yii::t('app', 'Borrower Name'),
         ];
     }
 

@@ -11,6 +11,9 @@ use yii\helpers\ArrayHelper;
  * @property int $id
  * @property string $name
  * @property int $data_status
+ * @property string $employee_no
+ * @property int $working_status
+ *
  * @property string $dataStatusStr
  *
  * @property LendingHistory[] $lendingHistories
@@ -34,9 +37,10 @@ class Employee extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['data_status'], 'default', 'value' => null],
-            [['data_status'], 'integer'],
-            [['name'], 'string', 'max' => 255],
+            [['name'], 'required'],
+            [['data_status', 'working_status'], 'default', 'value' => null],
+            [['data_status', 'working_status'], 'integer'],
+            [['name', 'employee_no'], 'string', 'max' => 255],
         ];
     }
 
@@ -46,10 +50,11 @@ class Employee extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'name' => 'Name',
-            'data_status' => 'Data Status',
-            'dataStatusStr' => 'Data Status',
+            'id' => Yii::t('app', 'ID'),
+            'name' => Yii::t('app', 'Name'),
+            'data_status' => Yii::t('app', 'Data Status'),
+            'employee_no' => Yii::t('app', 'Employee No'),
+            'working_status' => Yii::t('app', 'Working Status'),
         ];
     }
 
@@ -64,8 +69,8 @@ class Employee extends \yii\db\ActiveRecord
     public static function dataStatusOptionArr()
     {
       return [
-        self::DATA_STATUS_NORMAL => '通常',
-        self::DATA_STATUS_DELETED => '削除',
+        self::DATA_STATUS_NORMAL => '�ʏ�',
+        self::DATA_STATUS_DELETED => '�폜',
       ];
     }
     

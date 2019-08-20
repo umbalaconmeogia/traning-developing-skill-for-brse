@@ -19,7 +19,8 @@ use yii\helpers\ArrayHelper;
  * @property string $remarks
  * @property string $buy_date
  * @property int $payment_amount
- * 
+ * @property int $equipment_status
+ *
  * @property string $typeStr
  *
  * @property LendingHistory[] $lendingHistories
@@ -46,8 +47,9 @@ class Equipment extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['type', 'payment_amount'], 'default', 'value' => null],
-            [['type', 'payment_amount'], 'integer'],
+            [['category_id', 'name'], 'required'],
+            [['category_id', 'payment_amount', 'equipment_status'], 'default', 'value' => null],
+            [['category_id', 'payment_amount', 'equipment_status'], 'integer'],
             [['accessory', 'remarks'], 'string'],
             [['buy_date'], 'safe'],
             [['code', 'name', 'model_number', 'serial_number', 'specification'], 'string', 'max' => 255],
@@ -62,7 +64,7 @@ class Equipment extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'code' => Yii::t('app', 'Code'),
-            'type' => Yii::t('app', 'Type'),
+            'category_id' => Yii::t('app', 'Category ID'),
             'name' => Yii::t('app', 'Name'),
             'model_number' => Yii::t('app', 'Model Number'),
             'serial_number' => Yii::t('app', 'Serial Number'),
@@ -71,6 +73,7 @@ class Equipment extends \yii\db\ActiveRecord
             'remarks' => Yii::t('app', 'Remarks'),
             'buy_date' => Yii::t('app', 'Buy Date'),
             'payment_amount' => Yii::t('app', 'Payment Amount'),
+            'equipment_status' => Yii::t('app', 'Equipment Status'),
         ];
     }
 
@@ -85,16 +88,16 @@ class Equipment extends \yii\db\ActiveRecord
     public static function typeOptionArr()
     {
         return [
-            self::TYPE_PC => 'ãƒŽãƒ¼ãƒˆåž‹PC',
-            self::TYPE_DESKTOP => 'ãƒ‡ãƒƒã‚¯ã‚¹ãƒˆãƒƒãƒ—',
-            self::TYPE_SPEAKER => 'ã‚¹ãƒ”ãƒ¼ã‚«ãƒ¼',
-            self::TYPE_MONITOR => 'ãƒ¢ãƒ‹ã‚¿ãƒ¼',
-            self::TYPE_MOBILE_PHONE => 'æºå¸¯é›»è©±',
+            self::TYPE_PC => 'ƒm[ƒgŒ^PC',
+            self::TYPE_DESKTOP => 'ƒfƒbƒNƒXƒgƒbƒv',
+            self::TYPE_SPEAKER => 'ƒXƒs[ƒJ[',
+            self::TYPE_MONITOR => 'ƒ‚ƒjƒ^[',
+            self::TYPE_MOBILE_PHONE => 'Œg‘Ñ“d˜b',
         ];
     }
 
     public function getTypeStr()
     {
-        return ArrayHelper::getValue(self::typeOptionArr(), $this->type);
+        return ArrayHelper::getValue(self::typeOptionArr(), $this->category_id);
     }
 }
