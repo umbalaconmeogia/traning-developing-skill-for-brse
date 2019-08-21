@@ -1,6 +1,7 @@
 <?php
 
 use app\models\BaseAppModel;
+use app\models\SystemUser;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
@@ -33,7 +34,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'data_status',
                 'filter' => BaseAppModel::dataStatusOptionArr(),
                 'value' => 'dataStatusStr',
-              ],
+            ],
+            [
+                'attribute' => 'privileges',
+                'filter' => SystemUser::privilegesOptionArr(),
+                'value' => 'privilegeStr',
+            ],
   
             ['class' => 'yii\grid\ActionColumn'],
         ],

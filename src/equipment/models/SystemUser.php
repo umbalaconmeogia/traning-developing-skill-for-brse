@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "system_user".
@@ -12,7 +13,10 @@ use Yii;
  * @property string $password_hash
  * @property string $email
  * @property string $auth_key
+ * @property int $privileges
  * @property int $data_status
+ * 
+ * @property string $privilegeStr
  */
 class SystemUser extends BaseAppModel
 {
@@ -35,10 +39,10 @@ class SystemUser extends BaseAppModel
     public function rules()
     {
         return [
-            [['data_status'], 'default', 'value' => null],
-            [['data_status'], 'integer'],
+            [['privileges', 'data_status'], 'default', 'value' => null],
+            [['privileges', 'data_status'], 'integer'],
             [['username', 'password_hash', 'email', 'auth_key'], 'string', 'max' => 255],
-         ];
+        ];
     }
 
     /**
@@ -52,8 +56,22 @@ class SystemUser extends BaseAppModel
             'password_hash' => Yii::t('app', 'Password Hash'),
             'email' => Yii::t('app', 'Email'),
             'auth_key' => Yii::t('app', 'Auth Key'),
+            'privileges' => Yii::t('app', 'Privileges'),
             'data_status' => Yii::t('app', 'Data Status'),
             'password' => Yii::t('app', 'Password'),
         ];
+    }
+
+    public static function privilegesOptionArr()
+    {
+        return [
+            self::PRIVILEGES_ADMIN => '管理者',
+            self::PRIVILEGES_NORMAL => '一般ユーザ',
+        ];
+    }
+
+    public function getPrivilegeStr()
+    {
+        return ArrayHelper::getValue(self::privilegesOptionArr(), $this->privileges);
     }
 }

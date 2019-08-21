@@ -1,6 +1,7 @@
 <?php
 
 use app\models\BaseAppModel;
+use app\models\SystemUser;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -18,6 +19,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'password')->textInput(['type' => 'password']) ?>
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'privileges')->radioList(SystemUser::privilegesOptionArr()) ?>
 
     <?= $form->field($model, 'data_status')->radioList(BaseAppModel::dataStatusOptionArr()) ?>
 

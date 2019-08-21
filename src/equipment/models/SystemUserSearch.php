@@ -17,8 +17,8 @@ class SystemUserSearch extends SystemUser
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['username', 'password_hash', 'email', 'auth_key', 'data_status'], 'safe'],
+            [['id', 'privileges', 'data_status'], 'integer'],
+            [['username', 'password_hash', 'email', 'auth_key'], 'safe'],
         ];
     }
 
@@ -59,13 +59,14 @@ class SystemUserSearch extends SystemUser
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'privileges' => $this->privileges,
+            'data_status' => $this->data_status,
         ]);
 
         $query->andFilterWhere(['ilike', 'username', $this->username])
             ->andFilterWhere(['ilike', 'password_hash', $this->password_hash])
             ->andFilterWhere(['ilike', 'email', $this->email])
-            ->andFilterWhere(['ilike', 'auth_key', $this->auth_key])
-            ->andFilterWhere(['ilike', 'data_status', $this->data_status]);
+            ->andFilterWhere(['ilike', 'auth_key', $this->auth_key]);
 
         return $dataProvider;
     }

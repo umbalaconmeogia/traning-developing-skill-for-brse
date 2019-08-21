@@ -112,6 +112,7 @@ class TestDataController extends Controller
         for ($i = 0; $i <= 1; $i++) {
             $systemUser = SystemUser::findOneCreateNew(['username' => "User $i"]);
             $systemUser->email = "user$i@example.com";
+            $systemUser->privileges = $i % 2 + 1;
             $systemUser->data_status = BaseAppModel::DATA_STATUS_NORMAL;
             $systemUser->saveThrowError();
         }
