@@ -53,6 +53,10 @@ This course is deviced in two parts, which are running paralelly: Software devel
 1. ActiveRecord, Performance
 1. Migrating and command line
 1. I18n
+　　* https://www.yiiframework.com/doc/guide/2.0/en/tutorial-i18n
+　　* ./yii message/config --languages=en,ja --messagePath=messages messages/config.php
+  * 'sourcePath' => '@app',
+　　* Add /vendor to Exception
 1. Validation
 1. DRY
 1. Flag (bitwise)
