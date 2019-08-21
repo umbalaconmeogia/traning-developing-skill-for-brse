@@ -3,18 +3,21 @@
 use app\models\BaseAppModel;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use app\models\Employee;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Employee */
+/* @var $model app\models\SystemUser */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="employee-form">
+<div class="system-user-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'password')->textInput(['type' => 'password']) ?>
+
+    <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'data_status')->radioList(BaseAppModel::dataStatusOptionArr()) ?>
 

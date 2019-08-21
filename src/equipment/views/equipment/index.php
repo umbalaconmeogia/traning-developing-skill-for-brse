@@ -29,9 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'code',
             [
-                'attribute' => 'type',
-                'filter' => Equipment::typeOptionArr(),
-                'value' => 'typeStr',
+                'attribute' => 'category_id',
+                'filter' => Equipment::categoryOptionArr(),
+                'value' => 'categoryStr',
             ],
             'name',
             'model_number',

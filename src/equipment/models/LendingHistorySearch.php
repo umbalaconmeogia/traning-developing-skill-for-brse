@@ -4,21 +4,24 @@ namespace app\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Equipment;
+use app\models\LendingHistory;
 
 /**
- * EquipmentSearch represents the model behind the search form of `app\models\Equipment`.
+ * LendingHistorySearch represents the model behind the search form of `app\models\LendingHistory`.
  */
-class EquipmentSearch extends Equipment
+class LendingHistorySearch extends LendingHistory
 {
+    public $equipmentCode;
+
     /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['id', 'category_id', 'payment_amount'], 'integer'],
-            [['code', 'name', 'model_number', 'serial_number', 'specification', 'accessory', 'remarks', 'buy_date'], 'safe'],
+            [['id', 'employee_id', 'equipment_id'], 'integer'],
+            [['lending_date', 'return_date', 'remarks', 'borrower_name'], 'safe'],
+            [['employeeName', 'equipmentCode'], 'safe'],
         ];
     }
 
@@ -40,7 +43,7 @@ class EquipmentSearch extends Equipment
      */
     public function search($params)
     {
-        $query = Equipment::find();
+        $query = LendingHistory::find();
 
         // add conditions that should always apply here
 
@@ -59,18 +62,14 @@ class EquipmentSearch extends Equipment
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'category_id' => $this->category_id,
-            'buy_date' => $this->buy_date,
-            'payment_amount' => $this->payment_amount,
+            'employee_id' => $this->employee_id,
+            'equipment_id' => $this->equipment_id,
+            'lending_date' => $this->lending_date,
+            'return_date' => $this->return_date,
         ]);
 
-        $query->andFilterWhere(['ilike', 'code', $this->code])
-            ->andFilterWhere(['ilike', 'name', $this->name])
-            ->andFilterWhere(['ilike', 'model_number', $this->model_number])
-            ->andFilterWhere(['ilike', 'serial_number', $this->serial_number])
-            ->andFilterWhere(['ilike', 'specification', $this->specification])
-            ->andFilterWhere(['ilike', 'accessory', $this->accessory])
-            ->andFilterWhere(['ilike', 'remarks', $this->remarks]);
+        $query->andFilterWhere(['ilike', 'remarks', $this->remarks])
+            ->andFilterWhere(['ilike', 'borrower_name', $this->borrower_name]);
 
         return $dataProvider;
     }

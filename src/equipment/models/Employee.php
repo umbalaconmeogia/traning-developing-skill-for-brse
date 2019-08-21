@@ -18,10 +18,10 @@ use yii\helpers\ArrayHelper;
  *
  * @property LendingHistory[] $lendingHistories
  */
-class Employee extends \yii\db\ActiveRecord
-{
-    const DATA_STATUS_NORMAL = 1;
-    const DATA_STATUS_DELETED = 9;
+class Employee extends BaseAppModel
+{    
+    const WORKING_STATUS_NORMAL = 1;
+    const WORKING_STATUS_RETIRE = 2;
     
     /**
      * {@inheritdoc}
@@ -64,18 +64,5 @@ class Employee extends \yii\db\ActiveRecord
     public function getLendingHistories()
     {
         return $this->hasMany(LendingHistory::className(), ['employee_id' => 'id']);
-    }
-
-    public static function dataStatusOptionArr()
-    {
-      return [
-        self::DATA_STATUS_NORMAL => '’Êí',
-        self::DATA_STATUS_DELETED => 'íœ',
-      ];
-    }
-    
-    public function getDataStatusStr()
-    {
-      return ArrayHelper::getValue(self::dataStatusOptionArr(), $this->data_status);
     }
 }

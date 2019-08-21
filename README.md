@@ -43,6 +43,7 @@ This course is deviced in two parts, which are running paralelly: Software devel
 5. Testing
 6. Release
 7. Security
+9. User manual
 8. More effiction (vagrant, CI/CD).
 
 ### Coding skill

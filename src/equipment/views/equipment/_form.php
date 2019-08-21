@@ -15,7 +15,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'code')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'type')->radioList(Equipment::typeOptionArr()) ?>
+    <?= $form->field($model, 'category_id')->radioList(Equipment::categoryOptionArr()) ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 

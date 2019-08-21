@@ -1,19 +1,17 @@
 <?php
 
-use app\models\LendingHistory;
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Equipment */
+/* @var $model app\models\LendingHistory */
 
-$this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Equipments'), 'url' => ['index']];
+$this->title = $model->id;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Lending Histories'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="equipment-view">
+<div class="lending-history-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -31,24 +29,14 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'code',
-            'categoryStr',
-            'name',
-            'model_number',
-            'serial_number',
-            'specification',
-            'accessory:ntext',
+            'id',
+            'employee_id',
+            'equipment_id',
+            'lending_date',
+            'return_date',
             'remarks:ntext',
-            'buy_date',
-            'payment_amount:currency',
+            'borrower_name',
         ],
     ]) ?>
 
-    <?php if (!$model->isNewRecord) {
-        if ($model->id % 2 == 0) {
-            echo $this->render('_lending', ['model' => $model]);
-        } else {
-            echo $this->render('_return', ['model' => $model]);
-        }
-    } ?>
 </div>

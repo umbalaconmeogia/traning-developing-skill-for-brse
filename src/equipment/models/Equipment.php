@@ -10,7 +10,7 @@ use yii\helpers\ArrayHelper;
  *
  * @property int $id
  * @property string $code
- * @property int $type
+ * @property int $category_id
  * @property string $name
  * @property string $model_number
  * @property string $serial_number
@@ -21,18 +21,22 @@ use yii\helpers\ArrayHelper;
  * @property int $payment_amount
  * @property int $equipment_status
  *
- * @property string $typeStr
+ * @property string $categoryStr
  *
  * @property LendingHistory[] $lendingHistories
  */
-class Equipment extends \yii\db\ActiveRecord
+class Equipment extends BaseAppModel
 {
-    const TYPE_PC = 1;
-    const TYPE_DESKTOP = 2;
-    const TYPE_SPEAKER = 3;
-    const TYPE_MONITOR = 4;
-    const TYPE_MOBILE_PHONE = 5;
+    const CATEGORY_PC = 1;
+    const CATEGORY_DESKTOP = 2;
+    const CATEGORY_SPEAKER = 3;
+    const CATEGORY_MONITOR = 4;
+    const CATEGORY_MOBILE_PHONE = 5;
 
+    const EQUIPMENT_STATUS_NORMAL = 1;
+    const EQUIPMENT_STATUS_REPAIR = 2;
+    const EQUIPMENT_STATUS_BROKEN = 3;
+    
     /**
      * {@inheritdoc}
      */
@@ -85,19 +89,19 @@ class Equipment extends \yii\db\ActiveRecord
         return $this->hasMany(LendingHistory::className(), ['equipment_id' => 'id']);
     }
 
-    public static function typeOptionArr()
+    public static function categoryOptionArr()
     {
         return [
-            self::TYPE_PC => 'ƒm[ƒgŒ^PC',
-            self::TYPE_DESKTOP => 'ƒfƒbƒNƒXƒgƒbƒv',
-            self::TYPE_SPEAKER => 'ƒXƒs[ƒJ[',
-            self::TYPE_MONITOR => 'ƒ‚ƒjƒ^[',
-            self::TYPE_MOBILE_PHONE => 'Œg‘Ñ“d˜b',
+            self::CATEGORY_PC => 'ãƒŽãƒ¼ãƒˆåž‹PC',
+            self::CATEGORY_DESKTOP => 'ãƒ‡ãƒƒã‚¯ã‚¹ãƒˆãƒƒãƒ—',
+            self::CATEGORY_SPEAKER => 'ã‚¹ãƒ”ãƒ¼ã‚«ãƒ¼',
+            self::CATEGORY_MONITOR => 'ãƒ¢ãƒ‹ã‚¿ãƒ¼',
+            self::CATEGORY_MOBILE_PHONE => 'æºå¸¯é›»è©±',
         ];
     }
 
-    public function getTypeStr()
+    public function getCategoryStr()
     {
-        return ArrayHelper::getValue(self::typeOptionArr(), $this->category_id);
+        return ArrayHelper::getValue(self::categoryOptionArr(), $this->category_id);
     }
 }

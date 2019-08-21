@@ -17,8 +17,10 @@ use Yii;
  *
  * @property Employee $employee
  * @property Equipment $equipment
+ * 
+ * @property string $equipmentCode
  */
-class LendingHistory extends \yii\db\ActiveRecord
+class LendingHistory extends BaseAppModel
 {
     /**
      * {@inheritdoc}
@@ -75,5 +77,10 @@ class LendingHistory extends \yii\db\ActiveRecord
     public function getEquipment()
     {
         return $this->hasOne(Equipment::className(), ['id' => 'equipment_id']);
+    }
+
+    public function getEquipmentCode()
+    {
+        return $this->equipment_id ? $this->equipment->code : NULL;
     }
 }

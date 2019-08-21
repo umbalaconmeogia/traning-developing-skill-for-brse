@@ -5,18 +5,18 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\EmployeeSearch */
+/* @var $searchModel app\models\CategorySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Employees');
+$this->title = Yii::t('app', 'Categories');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="employee-index">
+<div class="category-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Employee'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Create Category'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -29,11 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'name',
             [
-              'attribute' => 'data_status',
-              'filter' => BaseAppModel::dataStatusOptionArr(),
-              'value' => 'dataStatusStr',
-            ],
-
+                'attribute' => 'data_status',
+                'filter' => BaseAppModel::dataStatusOptionArr(),
+                'value' => 'dataStatusStr',
+              ],
+  
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

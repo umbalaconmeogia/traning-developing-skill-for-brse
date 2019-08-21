@@ -1,22 +1,21 @@
 <?php
 
-use app\models\BaseAppModel;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\EmployeeSearch */
+/* @var $searchModel app\models\LendingHistorySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Employees');
+$this->title = Yii::t('app', 'Lending Histories');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="employee-index">
+<div class="lending-history-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Employee'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Create Lending History'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -27,12 +26,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'name',
-            [
-              'attribute' => 'data_status',
-              'filter' => BaseAppModel::dataStatusOptionArr(),
-              'value' => 'dataStatusStr',
-            ],
+            'borrower_name',
+            'equipmentCode',
+            'lending_date',
+            'return_date',
+            'remarks:ntext',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
