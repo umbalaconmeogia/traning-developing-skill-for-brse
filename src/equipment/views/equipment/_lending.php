@@ -29,7 +29,7 @@ $lendingHistory = new LendingHistory();
 </div>
 
 <div class="form-group">
-    <?= Html::submitButton(Yii::t('app', '貸出'), ['class' => 'btn btn-success']) ?>
+    <?= Html::submitButton(Yii::t('app', 'Lend'), ['class' => 'btn btn-success']) ?>
 </div>
 
 <?php ActiveForm::end(); ?>

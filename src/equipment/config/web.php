@@ -45,7 +45,28 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
+        'i18n' => [
+            'translations' => [
+                'yii' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'sourceLanguage' => 'en-US',
+                    'basePath' => '@app/messages'
+                ],
+            ],
+        ],
+        // 'i18n' => [
+        //     'translations' => [
+        //         'app*' => [
+        //             'class' => 'yii\i18n\PhpMessageSource',
+        //             'fileMap' => [
+        //                 'app' => 'app.php',
+        //                 'app/error' => 'error.php',
+        //             ],
+        //             'on missingTranslation' => ['app\components\TranslationEventHandler', 'handleMissingTranslation']
+        //         ],
+        //     ],
+        // ],
+            /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,

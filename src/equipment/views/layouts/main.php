@@ -29,7 +29,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => Yii::t('app', Yii::$app->name),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -39,19 +39,19 @@ AppAsset::register($this);
 
     ];
     if (Yii::$app->user->isGuest) {
-        $items[] = ['label' => 'Login', 'url' => ['/site/login']];
+        $items[] = ['label' => Yii::t('app', 'Login'), 'url' => ['/site/login']];
     } else {
         if (Yii::$app->user->identity->username == 'admin') {
-            $items[] = ['label' => 'User', 'url' => ['/system-user/index']];
-            $items[] = ['label' => 'Employee', 'url' => ['/employee/index']];
-            $items[] = ['label' => 'Category', 'url' => ['/category/index']];    
+            $items[] = ['label' => Yii::t('app', 'User'), 'url' => ['/system-user/index']];
+            $items[] = ['label' => Yii::t('app', 'Employee'), 'url' => ['/employee/index']];
+            $items[] = ['label' => Yii::t('app', 'Category'), 'url' => ['/category/index']];    
         }
-        $items[] = ['label' => 'Lending', 'url' => ['/lending-history/index']];
-        $items[] = ['label' => 'Equipment', 'url' => ['/equipment/index']];
+        $items[] = ['label' => Yii::t('app', 'Lending History'), 'url' => ['/lending-history/index']];
+        $items[] = ['label' => Yii::t('app', 'Equipment'), 'url' => ['/equipment/index']];
         $items[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
+                Yii::t('app', 'Logout') . ' (' . Yii::$app->user->identity->username . ')',
                 ['class' => 'btn btn-link logout']
             )
             . Html::endForm()
@@ -75,7 +75,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; <?= Yii::$app->name ?> <?= date('Y') ?></p>
+        <p class="pull-left">&copy; <?= Yii::t('app', Yii::$app->name) ?> <?= date('Y') ?></p>
 
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>

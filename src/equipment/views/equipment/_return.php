@@ -31,7 +31,7 @@ $lendingHistory->lending_date = '2019/08/18';
 </div>
 
 <div class="form-group">
-    <?= Html::submitButton(Yii::t('app', '返却'), ['class' => 'btn btn-success']) ?>
+    <?= Html::submitButton(Yii::t('app', 'Return'), ['class' => 'btn btn-success']) ?>
 </div>
 
 <?php ActiveForm::end(); ?>
