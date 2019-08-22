@@ -39,9 +39,13 @@ This course is deviced in two parts, which are running paralelly: Software devel
 2. [Requirement definition](./docs/softdev/requirement/README.md)
 2. Basic design
 3. Detail design
+  1. MVC Put Business logic in Model
+
 4. Development
 5. Testing
+5. Migrating
 6. Release
+  * Dont release on Friday
 7. Security
 9. User manual
 8. More effiction (vagrant, CI/CD).
@@ -50,28 +54,33 @@ This course is deviced in two parts, which are running paralelly: Software devel
 
 1. [Preparation](./docs/codingskill/preparation/README.md)
 1. [Create DB schema, model, CRUD](./docs/codingskill/crud/README.md)
-1. ActiveRecord, Performance
 1. Migrating and command line
+1. ActiveRecord, Performance
 1. I18n
 　　* https://www.yiiframework.com/doc/guide/2.0/en/tutorial-i18n
 　　* ./yii message/config --languages=en,ja --messagePath=messages messages/config.php
   * 'sourcePath' => '@app',
 　　* Add /vendor to Exception
 1. Validation
-1. DRY
-1. Flag (bitwise)
-1. Put Business logic in Model
 1. Searching and deleting
 1. Bootstrap
-1. Constant
 1. Logging
-1. RBAC
 1. Security
   Login attemps
 1. Testing
 1. Configuration and environtment (advanced template)
 1. .gitignore
 1. Package management
+1. External themes
+  1. RBAC
 
-Note
-Dont release on Friday
+1. Programming techniques
+  1. DRY
+  1. Don't repeat yourself
+  1. Put Business logic in Model
+  1. Constant
+  1. Flag (bitwise)
+
+### Human skill
+
+1. [Goal setting](./humanskill/goalsetting/README.md)

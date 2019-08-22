@@ -57,6 +57,7 @@ Color=$000000
 BkColor=$FFFFFF
 ModifiedDateTime=20190820170658
 Position="SUB",100,200
+Position="Main",100,200
 ZOrder=0
 
 [Entity]
@@ -84,6 +85,7 @@ Color=$000000
 BkColor=$FFFFFF
 ModifiedDateTime=20190820172654
 Position="SUB",1300,200
+Position="Main",1300,200
 ZOrder=1
 
 [Entity]
@@ -106,6 +108,7 @@ Color=$000000
 BkColor=$FFFFFF
 ModifiedDateTime=20190820173642
 Position="SUB",700,200
+Position="Main",700,200
 ZOrder=2
 
 [Relation]
@@ -117,6 +120,7 @@ Fields1=id
 Fields2=employee_id
 Cardinarity1=
 Cardinarity2=
+Position="MAIN",0,1551,8449,1414,R,R
 Position="SUB",0,1624,8376,812,R,R
 Dependence=0
 Caption=
@@ -139,6 +143,7 @@ Fields1=id
 Fields2=equipment_id
 Cardinarity1=
 Cardinarity2=
+Position="MAIN",0,1551,8449,1891,R,R
 Position="SUB",0,1624,8376,2436,R,R
 Dependence=0
 Caption=
@@ -159,18 +164,19 @@ Comment=
 TableOption=
 Page=MAIN
 Left=100
-Top=200
+Top=700
 Field="ID","id","integer","NOT NULL",0,"","",$FFFFFFFF,""
 Field="ログインアカウント","username","varchar(255)","NOT NULL",,"","",$FFFFFFFF,""
 Field="パスワード","password_hash","varchar(255)",,,"","",$FFFFFFFF,""
 Field="Eメール","email","varchar(255)",,,"","",$FFFFFFFF,""
 Field="Auth key","auth_key","varchar(255)",,,"","",$FFFFFFFF,""
+Field="権限","privilege","smallint",,,"","",$FFFFFFFF,""
 Field="データステータス","data_status","integer","NOT NULL",,"1","",$FFFFFFFF,""
 EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
-ModifiedDateTime=20190820170758
-Position="MAIN",100,200
+ModifiedDateTime=20190821210528
+Position="MAIN",100,700
 ZOrder=5
 
 [Entity]
@@ -213,26 +219,3 @@ Bar3=749
 TermPos1=R
 TermPos2=R
 ZOrder=7
-
-[Entity]
-PName=NEW_ENTITY1
-LName=Lending history
-Comment=
-TableOption=
-Page=Sub
-Left=700
-Top=500
-Field="ID","id","integer","NOT NULL",0,"","",$FFFFFFFF,""
-Field="貸出履歴","lending_id","integer",,,"","",$FFFFFFFF,""
-Field="社員","employee_id","integer",,,"","",$FFFFFFFF,""
-Field="借入者","borrower_name","varchar(255)",,,"","",$FFFFFFFF,""
-Field="設備","equipment_id","integer","NOT NULL",,"1","",$FFFFFFFF,""
-Field="処理日","action_date","date","NOT NULL",,"","",$FFFFFFFF,""
-Field="貸出・返却","action_type","integer",,,"","",$FFFFFFFF,""
-Field="備考","remarks","text",,,"","",$FFFFFFFF,""
-EffectMode=None
-Color=$000000
-BkColor=$FFFFFF
-ModifiedDateTime=20190820173504
-Position="Sub",700,500
-ZOrder=8
