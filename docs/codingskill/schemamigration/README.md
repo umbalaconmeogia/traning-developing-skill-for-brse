@@ -18,6 +18,8 @@ The reasons that we want to change the database structure are:
 * Change data type.
 * Rename some columns of table.
 
+Reference: [Database Migration](https://www.yiiframework.com/doc/guide/2.0/en/db-migrations)
+
 ## Some tips and note
 * *Don't* edit migration file that is shared (committed) to another team member. You must add new migration file to do what you want to change.
 * Migration down is reverse steps of migration up.

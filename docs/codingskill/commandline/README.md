@@ -7,7 +7,7 @@ Command line (console command) is used for
 
 Create a console command is like to create another web Controller/Action.
 
-Document: [Console applications](https://www.yiiframework.com/doc/guide/2.0/en/tutorial-console)
+Reference: [Console applications](https://www.yiiframework.com/doc/guide/2.0/en/tutorial-console)
 
 ## Tips
 

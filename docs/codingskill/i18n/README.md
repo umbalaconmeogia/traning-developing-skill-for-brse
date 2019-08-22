@@ -4,7 +4,7 @@ To make our Yii2 application multilingual, the points are
 1. Use Yii::t() function to display the text that should be multinlingual.
 2. Create messsages file for each languages.
 
-Document: [Internationalization](https://www.yiiframework.com/doc/guide/2.0/en/tutorial-i18n)
+Reference: [Internationalization](https://www.yiiframework.com/doc/guide/2.0/en/tutorial-i18n)
 
 # Steps to create message files
 
