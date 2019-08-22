@@ -17,8 +17,10 @@ Reference: [Console applications](https://www.yiiframework.com/doc/guide/2.0/en/
 ## Example
 
 We use command line to create many test data for our system.
-  ```php
-<?php
+
+We also create our *models\BaseAppModel.php* to put in model common functions (such as `dataStatusOptionArr()`, `getDataStatusStr()` and `saveThrowError()`  so that they can be used in many model classes.
+
+```php
 class TestDataController extends Controller
 {
     /**
@@ -129,4 +131,4 @@ class TestDataController extends Controller
     }
 
 }
-  ```
+```

@@ -188,7 +188,6 @@ class m190815_150253_create_lending_history_table extends Migration
   * Example
     *models\Employee.php*
     ```php
-    <?php
     /**
      * 省略
      * @property string $dataStatusStr
