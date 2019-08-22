@@ -54,24 +54,21 @@ This course is deviced in two parts, which are running paralelly: Software devel
 
 1. [Preparation](./docs/codingskill/preparation/README.md)
 1. [Create DB schema, model, CRUD](./docs/codingskill/crud/README.md)
-1. Migrating and command line
+1. [Schema migration](./docs/codingskill/schemamigration/README.md)
+1. [Console command](./docs/codingskill/commandline/README.md)
+1. [I18n](./docs/codingskill/i18n/README.md)
 1. ActiveRecord, Performance
-1. I18n
-　　* https://www.yiiframework.com/doc/guide/2.0/en/tutorial-i18n
-　　* ./yii message/config --languages=en,ja --messagePath=messages messages/config.php
-  * 'sourcePath' => '@app',
-　　* Add /vendor to Exception
 1. Validation
 1. Searching and deleting
 1. Bootstrap
 1. Logging
-1. Security
-  Login attemps
 1. Testing
 1. Configuration and environtment (advanced template)
 1. .gitignore
 1. Package management
 1. External themes
+  1. Security
+    Login attemps
   1. RBAC
 
 1. Programming techniques
@@ -83,4 +80,4 @@ This course is deviced in two parts, which are running paralelly: Software devel
 
 ### Human skill
 
-1. [Goal setting](./humanskill/goalsetting/README.md)
+1. [Goal setting](./docs/humanskill/goalsetting/README.md)
