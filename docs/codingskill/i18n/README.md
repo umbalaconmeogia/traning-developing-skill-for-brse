@@ -25,3 +25,5 @@ Yii2 provide console command *message* to help us to generate message files by s
   
 * Edit *messages/ja/app.php* to add our translation.
 * Refresh the web application to see the text is translated.
+
+TODO: Add config.php for i18n

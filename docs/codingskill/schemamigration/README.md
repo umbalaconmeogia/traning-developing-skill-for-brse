@@ -13,6 +13,8 @@ Now we decide that we will change the database structure
 
 ![new erd](./images/ERD.png)
 
+TODO Important point of migration
+
 The reasons that we want to change the database structure are:
 * Add or remove columns.
 * Change data type.

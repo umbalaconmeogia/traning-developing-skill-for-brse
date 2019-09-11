@@ -61,15 +61,16 @@ This course is deviced in two parts, which are running paralelly: Software devel
 1. Validation
 1. Searching and deleting
 1. Bootstrap
+1. [Security](./docs/codingskill/security/README.md)
+  1. Security
+    Login attemps
+  1. RBAC
 1. Logging
 1. Testing
 1. Configuration and environtment (advanced template)
 1. .gitignore
 1. Package management
 1. External themes
-  1. Security
-    Login attemps
-  1. RBAC
 
 1. Programming techniques
   1. DRY
