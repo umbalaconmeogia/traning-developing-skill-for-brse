@@ -1,13 +1,21 @@
 # Security
 
+## Introduce Log and Debug
+
+* Display logs in debug tool
+  ![Log in debug mode](./images/Log.png)
+* Application flow
+  ![Application Flow](./images/ApplicationFlow.png)
+
 ## Login
 
-![Login]
+* Login mechanism
+  ![Login mechanism](./images/LoginMechanism.png)
 
-Component
-Yii::$app->user Web User Interface
-Cookie
-Session
+
+* Action Login flow
+  ![Action Login Flow](./images/ActionLogin.png)
+
 
 ## Password
 
