@@ -11,8 +11,6 @@
 
 * Login mechanism
   ![Login mechanism](./images/LoginMechanism.png)
-
-
 * Action Login flow
   ![Action Login Flow](./images/ActionLogin.png)
 
