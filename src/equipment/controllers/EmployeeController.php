@@ -5,14 +5,16 @@ namespace app\controllers;
 use Yii;
 use app\models\Employee;
 use app\models\EmployeeSearch;
+use batsg\controllers\BaseController;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\BaseConsole;
 
 /**
  * EmployeeController implements the CRUD actions for Employee model.
  */
-class EmployeeController extends Controller
+class EmployeeController extends BaseController
 {
     /**
      * {@inheritdoc}
@@ -35,13 +37,7 @@ class EmployeeController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new EmployeeSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+        return $this->defaultActionIndex(EmployeeSearch::class);
     }
 
     /**
@@ -52,9 +48,7 @@ class EmployeeController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+        return $this->defaultActionView($id, Employee::class);
     }
 
     /**
@@ -64,15 +58,7 @@ class EmployeeController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Employee();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+        return $this->defaultActionCreate(Employee::class, 'index');
     }
 
     /**
@@ -84,15 +70,7 @@ class EmployeeController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
+        return $this->defaultActionUpdate($id, Employee::class, 'index');
     }
 
     /**
@@ -104,9 +82,7 @@ class EmployeeController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
+        return $this->defaultActionDelete($id, Employee::class);
     }
 
     /**
@@ -116,12 +92,12 @@ class EmployeeController extends Controller
      * @return Employee the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
-    {
-        if (($model = Employee::findOne($id)) !== null) {
-            return $model;
-        }
+    // protected function findModel($id)
+    // {
+    //     if (($model = Employee::findOne($id)) !== null) {
+    //         return $model;
+    //     }
 
-        throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
-    }
+    //     throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+    // }
 }

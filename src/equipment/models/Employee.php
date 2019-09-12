@@ -17,6 +17,7 @@ use yii\helpers\ArrayHelper;
  * @property string $dataStatusStr
  *
  * @property LendingHistory[] $lendingHistories
+ * @property LendingHistory[] $lendingHistoriesWithEquipmentAndEmployee
  */
 class Employee extends BaseAppModel
 {    
@@ -64,5 +65,23 @@ class Employee extends BaseAppModel
     public function getLendingHistories()
     {
         return $this->hasMany(LendingHistory::className(), ['employee_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getLendingHistoriesWithEquipmentAndEmployee()
+    {
+        return $this->hasMany(LendingHistory::className(), ['employee_id' => 'id'])
+        ->with(['equipment', 'employee'])
+        ->orderBy(['equipment_id' => 'ASC']);
+    }
+
+    public function deleteLogically()
+    {
+        parent::deleteLogically();
+        // foreach ($this->lendingHistories as $lendingHistory) {
+        //     $lendingHistory->deleteLogically();
+        // }
     }
 }

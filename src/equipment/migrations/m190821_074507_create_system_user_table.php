@@ -7,13 +7,15 @@ use yii\db\Migration;
  */
 class m190821_074507_create_system_user_table extends Migration
 {
-    protected $table = 'system_user';
+    protected $table = '{{%system_user}}';
 
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
+        // $sql = "CREATE TABLE system_user (id INTEGER PRIMARY KEY AUTO INCREMENT, username VARCHAR(255) NOT NULL)";
+        // $this->exec($sql);
         $this->createTable($this->table, [
             'id' => $this->primaryKey(),
             'username' => $this->string(),

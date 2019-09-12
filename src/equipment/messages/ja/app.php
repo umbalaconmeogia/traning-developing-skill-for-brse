@@ -41,7 +41,7 @@ return [
     'Equipment' => '設備',
     'Equipment ID' => '',
     'Equipment Status' => '',
-    'Equipment management' => '@@設備管理@@',
+    'Equipment management' => '設備管理',
     'Equipments' => '設備',
     'ID' => '',
     'Lend' => '貸出',

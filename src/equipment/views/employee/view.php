@@ -34,4 +34,9 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
+    <?php
+        foreach ($model->lendingHistoriesWithEquipmentAndEmployee as $lendingHistory) {
+            echo "Equipment: {$lendingHistory->equipment->name}, Employee: {$lendingHistory->employee->name}, Date: $lendingHistory->lending_date <br />";
+        }
+    ?>
 </div>

@@ -9,6 +9,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use app\models\SystemUser;
 
 AppAsset::register($this);
 ?>
@@ -41,13 +42,18 @@ AppAsset::register($this);
     if (Yii::$app->user->isGuest) {
         $items[] = ['label' => Yii::t('app', 'Login'), 'url' => ['/site/login']];
     } else {
-        if (Yii::$app->user->identity->username == 'admin') {
+        if (Yii::$app->user->identity->privileges == SystemUser::PRIVILEGES_ADMIN) {
             $items[] = ['label' => Yii::t('app', 'User'), 'url' => ['/system-user/index']];
             $items[] = ['label' => Yii::t('app', 'Employee'), 'url' => ['/employee/index']];
             $items[] = ['label' => Yii::t('app', 'Category'), 'url' => ['/category/index']];    
         }
         $items[] = ['label' => Yii::t('app', 'Lending History'), 'url' => ['/lending-history/index']];
         $items[] = ['label' => Yii::t('app', 'Equipment'), 'url' => ['/equipment/index']];
+        $items[] = ['label' => Yii::t('app', 'Demo'),
+            'items' => [
+                ['label' => Yii::t('app', 'DatrTime'), 'url' => ['/demo/datetime']],
+            ]
+        ];
         $items[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(

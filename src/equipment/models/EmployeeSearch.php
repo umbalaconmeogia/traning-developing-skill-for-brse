@@ -41,12 +41,16 @@ class EmployeeSearch extends Employee
     public function search($params)
     {
         $query = Employee::find();
+        self::addWhereNotDeleted($query);
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
+        // $dataProvider->sort->attributes['name'] = null;
+
+        \Yii::info('params ' . print_r($params, true));
 
         $this->load($params);
 
@@ -58,11 +62,13 @@ class EmployeeSearch extends Employee
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
-            'data_status' => $this->data_status,
+            'id' => $this->id, // If ($this->id not empty (=1)) add condition "id = 1"
+            'data_status' => $this->data_status, // If ($this->data_status not empty (=9)) add condition "data_status = 9"
         ]);
 
         $query->andFilterWhere(['ilike', 'name', $this->name]);
+        // if ($this->name not empty (=3))
+        // add condition "name ILIKE '%3%'"
 
         return $dataProvider;
     }

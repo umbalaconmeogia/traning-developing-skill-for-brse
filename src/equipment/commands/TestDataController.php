@@ -109,11 +109,12 @@ class TestDataController extends Controller
      */
     public function actionInitSystemUser()
     {
-        for ($i = 0; $i <= 1; $i++) {
+        for ($i = 0; $i <= 5; $i++) {
             $systemUser = SystemUser::findOneCreateNew(['username' => "User $i"]);
+            $systemUser->password = "password$i";
             $systemUser->email = "user$i@example.com";
             $systemUser->privileges = $i % 2 + 1;
-            $systemUser->data_status = BaseAppModel::DATA_STATUS_NORMAL;
+            $systemUser->data_status = BaseAppModel::DATA_STATUS_ACTIVE;
             $systemUser->saveThrowError();
         }
     }
