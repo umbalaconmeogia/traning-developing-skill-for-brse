@@ -86,8 +86,13 @@ class EquipmentController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            if ($model->save()) {
+                \Yii::$app->session->setFlash('success', "設備が更新されました.");
+                return $this->redirect(['view', 'id' => $model->id]);
+            } else {
+                \Yii::$app->session->setFlash('warning', "設備が更新されません.");
+            }
         }
 
         return $this->render('update', [

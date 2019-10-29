@@ -73,7 +73,7 @@ This course is deviced in two parts, which are running paralelly: Software devel
 1. External themes
 
 1. Programming techniques
-  1. DRY
+  1. [DRY](./docs/codingskill/programming/dry.md)
   1. Don't repeat yourself
   1. Put Business logic in Model
   1. Constant
